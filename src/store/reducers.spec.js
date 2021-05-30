@@ -22,18 +22,18 @@ describe('adverts', () => {
     expect(nextState).toStrictEqual(expectedState);
   });
 
-  // test('should manage ADVERTS_DETAIL_SUCCESS action', () => {
-  //   const state = initialState.adverts;
-  //   const advert = {};
-  //   const action = { type: ADVERTS_DETAIL_SUCCESS, payload: advert };
-  //   const expectedState = {
-  //     ...initialState.adverts,
-  //     loaded: false,
-  //     data: [...initialState.adverts.data, advert],
-  //   };
-  //   console.log(expectedState);
-  //   const nextState = adverts(state, action);
-  //   console.log(nextState);
-  //   expect(nextState).toStrictEqual(expectedState);
-  // });
+  test('should manage ADVERTS_DETAIL_SUCCESS action', () => {
+    const state = initialState.adverts;
+    const advert = {};
+    const action = { type: ADVERTS_DETAIL_SUCCESS, payload: advert };
+    const expectedState = {
+      ...initialState.adverts,
+      loaded: true,
+      data: [...initialState.adverts.data, advert],
+    };
+    console.log(expectedState);
+    const nextState = adverts(state, action);
+    console.log(nextState);
+    expect(nextState).toStrictEqual(expectedState);
+  });
 });
