@@ -17,7 +17,7 @@ const history = createBrowserHistory();
 const store = configureStore({
   preloadedState: {
     auth: { logged: !!accessToken, user: null, id: null },
-    adverts: [],
+    adverts: { loaded: false, data: [] },
   },
   history,
 });
